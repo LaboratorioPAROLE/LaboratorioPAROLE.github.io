@@ -1,0 +1,102 @@
+TY  - ELEC
+AU  - Berners-Lee, Tim
+TI  - Linked Data – Design Issues
+UR  - https://www.w3.org/DesignIssues/LinkedData.html
+PY  - 2006
+ER  -
+
+TY  - JOUR
+AU  - Wilkinson, Mark D.
+AU  - Dumontier, Michel
+AU  - Aalbersberg, IJsbrand Jan
+AU  - Appleton, Gabrielle
+AU  - Axton, Myles
+AU  - Baak, Arie
+AU  - Blomberg, Niklas
+AU  - Boiten, Jan-Willem
+AU  - da Silva Santos, Luiz Bonino
+AU  - Bourne, Philip E.
+AU  - Bouwman, Jildau
+AU  - Brookes, Anthony J.
+AU  - Clark, Tim
+AU  - Crosas, Mercè
+AU  - Dillo, Ingrid
+AU  - Dumon, Olivier
+AU  - Edmunds, Scott
+AU  - Evelo, Chris T.
+AU  - Finkers, Richard
+AU  - Gonzalez-Beltran, Alejandra
+AU  - Gray, Alasdair J. G.
+AU  - Groth, Paul
+AU  - Goble, Carole
+AU  - Grethe, Jeffrey S.
+AU  - Heringa, Jaap
+AU  - ’t Hoen, Peter A. C.
+AU  - Hooft, Rob
+AU  - Kuhn, Tobias
+AU  - Kok, Robin
+AU  - Kok, Joeri
+AU  - Lusher, Sheri J.
+AU  - Martone, Maryann E.
+AU  - Mons, Barend
+AU  - Packer, Abel L.
+AU  - Persson, Bengt
+AU  - Rocca-Serra, Philippe
+AU  - Roos, Marco
+AU  - van Schaik, Ronald
+AU  - Sansone, Susanna-Assunta
+AU  - Schultes, Erik
+AU  - Sengstag, Thierry
+AU  - Slater, Ted
+AU  - Strawn, George
+AU  - Swertz, Morris A.
+AU  - Thompson, Mark
+AU  - van der Lei, Johan
+AU  - van Mulligen, Erik
+AU  - Velterop, Jan
+AU  - Waagmeester, Andra
+AU  - Wittenburg, Peter
+AU  - Wolstencroft, Katherine
+AU  - Zhao, Jun
+AU  - Mons, Abraham
+TI  - The FAIR Guiding Principles for scientific data management and stewardship
+JO  - Scientific Data
+VL  - 3
+SP  - 160018
+PY  - 2016
+DO  - 10.1038/sdata.2016.18
+ER  -
+
+TY  - CPAPER
+AU  - McCrae, John P.
+AU  - Chiarcos, Christian
+AU  - Cimiano, Philipp
+TI  - The OntoLex-Lemon Model: Development and Applications
+T2  - Proceedings of eLex 2017
+PY  - 2017
+ER  -
+
+TY  - JOUR
+AU  - Cimiano, Philipp
+AU  - McCrae, John P.
+AU  - Buitelaar, Paul
+TI  - LexInfo: A declarative model for the lexicon-ontology interface
+JO  - Web Semantics: Science, Services and Agents on the World Wide Web
+VL  - 9
+IS  - 1
+SP  - 29
+EP  - 51
+PY  - 2011
+ER  -
+
+TY  - CHAP
+AU  - Chiarcos, Christian
+AU  - Hellmann, Sebastian
+AU  - Nordhoff, Sebastian
+TI  - Linked Data in Linguistics: Introduction and Overview
+BT  - Linked Data in Linguistics
+PB  - Springer
+SP  - 1
+EP  - 27
+PY  - 2012
+ER  -
