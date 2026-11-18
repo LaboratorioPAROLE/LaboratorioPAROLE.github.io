@@ -1,0 +1,94 @@
+/* Laboratorio P.A.R.O.L.E. — foglio di stile comune */
+
+:root {
+  --accent: #871100;   /* rosso del sito: cambialo qui per tutte le pagine */
+  --text: #1E1E1E;
+  --muted: #595959;
+  --line: #D9D9D5;
+  --bg: #F2F2F0;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Avenir Next', 'Avenir', 'Nunito Sans', system-ui, sans-serif;
+  font-size: 17px;
+}
+
+a { color: var(--text); text-decoration: none; }
+a:hover { color: var(--accent); }
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Testata */
+.site-header {
+  background: #FFFFFF;
+  border-top: 4px solid var(--accent);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 20;
+}
+.site-header .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  min-height: 72px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+.brand { display: flex; align-items: center; gap: 12px; padding: 10px 0; }
+.brand img { height: 56px; width: auto; flex: 0 0 auto; }
+.brand-name { display: block; font-weight: 600; font-size: 20px; color: var(--text); }
+.brand-full { display: block; font-size: 13px; color: var(--muted); }
+
+.main-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0 2px; font-size: 16px; }
+.main-nav > a { padding: 12px 11px; }
+.main-nav a.active,
+.has-menu.active > a { color: var(--accent); font-weight: 600; }
+
+.has-menu { position: relative; display: flex; align-items: center; }
+.has-menu > a { padding: 12px 2px 12px 11px; }
+.menu-toggle {
+  background: none;
+  border: 0;
+  padding: 12px 9px 12px 5px;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+.has-menu.active .menu-toggle { color: var(--accent); }
+.menu-toggle:hover { color: var(--accent); }
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 30;
+  min-width: 300px;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  flex-direction: column;
+  padding: 6px 0;
+}
+.has-menu:hover .submenu,
+.has-menu:focus-within .submenu,
+.has-menu.open .submenu { display: flex; }
+.submenu a { padding: 11px 18px; }
+.submenu a.active { color: var(--accent); }
+
+/* Telefono */
+@media (max-width: 640px) {
+  .site-header .inner { padding: 0 16px; }
+  .brand-full { font-size: 12px; }
+  .submenu { min-width: 260px; }
+}

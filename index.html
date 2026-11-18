@@ -1,220 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>COSÌ - Catalogo Online dei Segnali discorsivi dell’Italiano</title>
-  <style>
- body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-    }
-    header, footer {
-      background: #003366;
-      color: white;
-      padding: 1em 2em;
-      margin-top: 1em;
-      display:block;
-      flex-direction: row;
-
-    }
-    footer a {
-
-        color: white;
-    }
-    main {
-      padding: 2em;
-      max-width: 960px;
-      margin: auto;
-      background: white;
-    }
-    h1, h2, h3 {
-      color: #003366;
-    }
-    a {
-      color: #003366;
-      text-decoration: none;
-    }
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    nav ul li {
-      margin-bottom: 0.5em;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 1em;
-    }
-    table, th, td {
-      border: 1px solid #ccc;
-    }
-    th, td {
-      padding: 0.5em;
-      text-align: left;
-    }
-  
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P.A.R.O.L.E. – Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-  <div style="display: flex; align-items: center;">
-    <div style="display: flex; flex-direction: column;">
-      <h1 style="color: white;">COSÌ - Catalogo Online dei Segnali discorsivi dell’Italiano</h1>
-      <div>
-        <p><strong>Laboratorio PAROLE, DipSUm - Dipartimento di Studi Umanistici, Università di Salerno</strong></p>
+<div class="page">
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">
+      <img src="images/logo.png" alt="" width="39" height="56">
+      <span><span class="brand-name">Laboratorio P.A.R.O.L.E.</span><span class="brand-full">Laboratorio Per l'Analisi, la Ricerca e l'Osservazione delle Lingue Europee</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Principale">
+      <a href="persone.html">Persone</a>
+      <a href="progetti.html">Progetti</a>
+      <div class="has-menu">
+        <a href="risorse.html">Risorse</a>
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-label="Sottosezioni di Risorse"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="submenu">
+          <a href="corpora.html">Corpora e banche dati</a>
+          <a href="didattica.html">Piattaforme per la didattica</a>
+          <a href="strumenti.html">Strumenti di analisi e annotazione</a>
+        </div>
       </div>
-    </div>
-    
-    <div style="margin-left: auto;">
-      <img
-        style="height: 300px; width: 300px;"
-        src="/images/logo-linguisticSA.jpg"
-        alt="Logo LinguisticSA"
-      />
-    </div>
+      <div class="has-menu">
+        <a href="attivita.html">Attività</a>
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-label="Sottosezioni di Attività"><svg aria-hidden="true" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+        <div class="submenu">
+          <a href="tesi.html">Tesi di dottorato</a>
+          <a href="eventi.html">Organizzazione di eventi di interesse accademico</a>
+          <a href="terza-missione.html">Terza missione</a>
+        </div>
+      </div>
+      <a href="contatti.html">Contatti</a>
+    </nav>
   </div>
 </header>
+<main>
 
-  <main>
-    <h2>Table of Contents</h2>
-    <nav>
-      <ul>
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#background-and-motivation">Background and Motivation</a></li>
-        <li><a href="#annotation-initiatives">Annotation Initiatives</a></li>
-        <li><a href="#building-cosi">Building COSÌ</a>
-          <ul>
-            <li><a href="#general-architecture">General Architecture</a></li>
-            <li><a href="#a-corpus-based-approach">A Corpus-Based Approach</a></li>
-            <li><a href="#selecting-dms">Selecting DMs</a></li>
-            <li><a href="#annotation-schema-design">Annotation Schema Design</a></li>
-            <li><a href="#interoperability">Interoperability</a></li>
-          </ul>
+  <section style="max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 72px 32px 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 48px; align-items: center">
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <h1 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 600">Laboratorio P.A.R.O.L.E.</h1>
+        <p style="margin: 0; font-size: 20px; line-height: 1.45; color: #4A4A4A">Laboratorio Per l'Analisi, la Ricerca e l'Osservazione delle Lingue Europee</p>
+      </div>
+      <p style="margin: 0; font-size: 19px; line-height: 1.65; color: #333333">[Presentazione del laboratorio: di cosa si occupa, con quali metodi, per chi. Tre o quattro righe al massimo.]</p>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #333333">Il laboratorio fa parte del Dipartimento di Studi Umanistici dell'Università di Salerno.</p>
+    </div>
+    <img src="images/logo.png" alt="Logo del Laboratorio P.A.R.O.L.E." style="width: 226px; max-width: 100%; height: auto">
+  </section>
+
+  <section style="background: #FFFFFF; border-top: 1px solid #D9D9D5">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 56px 32px 72px; display: flex; flex-direction: column; gap: 20px">
+      <h2 style="margin: 0; font-size: 26px; font-weight: 600">Notizie</h2>
+      <ul style="list-style: none; margin: 0; padding: 0; border-top: 1px solid #D9D9D5">
+        <li style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 20px 0; border-bottom: 1px solid #D9D9D5">
+          <span style="flex: 0 0 140px; font-size: 15px; color: #595959; padding-top: 2px">[gg mese aaaa]</span>
+          <span style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 4px"><a href="index.html" style="font-size: 18px; font-weight: 600">[Titolo della notizia]</a><span style="font-size: 16px; line-height: 1.55; color: #4A4A4A">[Una riga di dettaglio: luogo, relatore, scadenza.]</span></span>
         </li>
-        <li><a href="#references">References</a></li>
-        <li><a href="#license">License</a></li>
+        <li style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 20px 0; border-bottom: 1px solid #D9D9D5">
+          <span style="flex: 0 0 140px; font-size: 15px; color: #595959; padding-top: 2px">[gg mese aaaa]</span>
+          <span style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 4px"><a href="index.html" style="font-size: 18px; font-weight: 600">[Titolo della notizia]</a><span style="font-size: 16px; line-height: 1.55; color: #4A4A4A">[Una riga di dettaglio: luogo, relatore, scadenza.]</span></span>
+        </li>
+        <li style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 20px 0; border-bottom: 1px solid #D9D9D5">
+          <span style="flex: 0 0 140px; font-size: 15px; color: #595959; padding-top: 2px">[gg mese aaaa]</span>
+          <span style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 4px"><a href="index.html" style="font-size: 18px; font-weight: 600">[Titolo della notizia]</a><span style="font-size: 16px; line-height: 1.55; color: #4A4A4A">[Una riga di dettaglio: luogo, relatore, scadenza.]</span></span>
+        </li>
       </ul>
+      <a href="index.html" style="align-self: flex-start; font-size: 16px; color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Archivio delle notizie</a>
+    </div>
+  </section>
+</main>
+<div style="margin-top: auto">
+<footer class="site-footer" style="font-family: 'Avenir Next', 'Avenir', 'Nunito Sans', system-ui, sans-serif; background: #2B2B2B; color: #D4D4D0">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 48px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 32px; font-size: 15px; line-height: 1.6">
+    <div>
+      <div style="font-size: 18px; font-weight: 600; color: #FFFFFF; margin-bottom: 8px">Laboratorio P.A.R.O.L.E.</div>
+      Dipartimento di Studi Umanistici<br>Università di Salerno<br>via Giovanni Paolo II 132<br>Fisciano (SA), edificio D3
+    </div>
+    <nav aria-label="Sezioni del sito" style="display: flex; flex-direction: column; gap: 2px">
+      <a href="persone.html" style="color: #D4D4D0; text-decoration: none">Persone</a>
+      <a href="progetti.html" style="color: #D4D4D0; text-decoration: none">Progetti</a>
+      <a href="risorse.html" style="color: #D4D4D0; text-decoration: none">Risorse</a>
+      <a href="attivita.html" style="color: #D4D4D0; text-decoration: none">Attività del Laboratorio</a>
+      <a href="contatti.html" style="color: #D4D4D0; text-decoration: none">Contatti</a>
     </nav>
-
-    <section id="introduction">
-      <h2>Introduction</h2>
-      <p><strong>COSÌ</strong> is an open online catalog of Italian discourse markers (Segnali discorsivi). It provides a comprehensive, corpus-based resource for the analysis, annotation, and exploration of discourse markers (DMs) in contemporary spoken Italian.</p>
-    </section>
-
-    <section id="background-and-motivation">
-      <h2>Background and Motivation</h2>
-      <p>COSÌ builds upon previous resources like the <em>Diccionario de Partículas Discursivas del Español</em> (DPDE) but improves upon limitations such as lack of corpus linkage, metadata access, and dynamic annotation exploration.</p>
-      <p>Rooted in <strong>linked data</strong> principles, COSÌ emphasizes interoperability, sustainability, and usability with the KIParla corpus.</p>
-    </section>
-
-    <section id="annotation-initiatives">
-      <h2>Annotation Initiatives</h2>
-      <p>The primary model is <strong>MDMA</strong> (Bolly et al., 2015), focusing on corpus-based, replicable, objective DM annotation. COSÌ enhances this by including clusters, function layers, and speaker profiling.</p>
-    </section>
-
-    <section id="building-cosi">
-      <h2>Building COSÌ</h2>
-
-      <section id="general-architecture">
-        <h3>General Architecture</h3>
-        <p>COSÌ consists of:</p>
-        <ul>
-          <li><strong>Website</strong>: UI for DM exploration (planned).</li>
-          <li><strong><a href="https://github.com/LaboratorioPAROLE/cosi">Open Repository</a></strong>: Annotated data, guidelines, substitution tests, and context files.</li>
-        </ul>
-      </section>
-
-      <section id="a-corpus-based-approach">
-        <h3>A Corpus-Based Approach</h3>
-        <p>All data derives from the KIParla corpus and its modules (KIP, KIPasti, ParlaTO, ParlaBO), using random sampling via NoSketchEngine with full metadata retention.</p>
-      </section>
-
-      <section id="selecting-dms">
-        <h3>Selecting DMs</h3>
-        <ul>
-          <li>Based on frequency lists from KIParla and VoLIP.</li>
-          <li>1,517 tokens analyzed; 175 flagged DMs.</li>
-          <li>Occurrences range from 101 (evidentemente) to 30,666 (eh).</li>
-          <li>High-frequency DMs capped at 800 examples; low-frequency DMs fully included.</li>
-        </ul>
-      </section>
-
-      <section id="annotation-schema-design">
-        <h3>Annotation Schema Design</h3>
-        <p>Annotation differentiates between DM and non-DM uses using three substitution diagnostics, with functional labels grounded in literature but adapted for practical use.</p>
-      </section>
-
-      <section id="interoperability">
-        <h3>Interoperability with the Source Corpus</h3>
-        <p>Annotations preserve KIParla metadata and comply with the CoNLL-U format to ensure integration and longevity across linguistic resources.</p>
-      </section>
-    </section>
-
-    <section id="references">
-      <h2>References</h2>
-     
-     <div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
-  <div class="csl-entry">Bolly, C. T., Crible, L., Degand, L., &amp; Uygur-Distexhe, D. (2015). MDMA. Un modèle pour l’identification et l’annotation des marqueurs discursifs “potentiels” en context. <i>Discours</i>, <i>16</i>, 3–32.</div>
-  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=MDMA.%20Un%20mod%C3%A8le%20pour%20l%E2%80%99identification%20et%20l%E2%80%99annotation%20des%20marqueurs%20discursifs%20%E2%80%9Cpotentiels%E2%80%9D%20en%20context&amp;rft.jtitle=Discours&amp;rft.stitle=Discours&amp;rft.volume=16&amp;rft.aufirst=C.%20T.&amp;rft.aulast=Bolly&amp;rft.au=C.%20T.%20Bolly&amp;rft.au=L.%20Crible&amp;rft.au=L.%20Degand&amp;rft.au=D.%20Uygur-Distexhe&amp;rft.date=2015&amp;rft.pages=3-32&amp;rft.spage=3&amp;rft.epage=32"></span>
-  <div class="csl-entry">Briz, A., Pons Bordería, S., &amp; Portolés, J. (2008). <i>Diccionario de partículas discursivas del español</i>. <a href="http://www.dpde.es">http://www.dpde.es</a></div>
-  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=webpage&amp;rft.title=Diccionario%20de%20part%C3%ADculas%20discursivas%20del%20espa%C3%B1ol&amp;rft.identifier=http%3A%2F%2Fwww.dpde.es&amp;rft.aufirst=A.&amp;rft.aulast=Briz&amp;rft.au=A.%20Briz&amp;rft.au=S.%20Pons%20Border%C3%ADa&amp;rft.au=J.%20Portol%C3%A9s&amp;rft.date=2008"></span>
-  <div class="csl-entry">Chiarcos, C., Hellmann, S., &amp; Nordhoff, S. (2012). <i>Linked Data in Linguistics: Representing and Connecting Language Data and Language Metadata</i>. Springer.</div>
-  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Linked%20Data%20in%20Linguistics%3A%20Representing%20and%20Connecting%20Language%20Data%20and%20Language%20Metadata&amp;rft.place=Berlin%2C%20Heidelberg&amp;rft.publisher=Springer&amp;rft.aufirst=Christian&amp;rft.aulast=Chiarcos&amp;rft.au=Christian%20Chiarcos&amp;rft.au=Sebastian%20Hellmann&amp;rft.au=Sebastian%20Nordhoff&amp;rft.date=2012"></span>
-  <div class="csl-entry">Crible, L., &amp; Cuenca, M.-J. (2017). Discourse markers in speech: Characteristics and challenges for corpus annotation. <i>Dialogue and Discourse</i>, <i>8</i>(2), 149–166. <a href="https://doi.org/10.5087/dad">https://doi.org/10.5087/dad</a></div>
-  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.5087%2Fdad&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Discourse%20markers%20in%20speech%3A%20Characteristics%20and%20challenges%20for%20corpus%20annotation&amp;rft.jtitle=Dialogue%20and%20Discourse&amp;rft.stitle=Dialogue%20and%20Discourse&amp;rft.volume=8&amp;rft.issue=2&amp;rft.aufirst=L.&amp;rft.aulast=Crible&amp;rft.au=L.%20Crible&amp;rft.au=Maria-Josep%20Cuenca&amp;rft.date=2017&amp;rft.pages=149-166&amp;rft.spage=149&amp;rft.epage=166"></span>
-  <div class="csl-entry">Crible, L., &amp; Zufferey, S. (2015). <i>Using a unified taxonomy to annotate discourse markers in speech and writing</i>. 14–22.</div>
-  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=proceeding&amp;rft.atitle=Using%20a%20unified%20taxonomy%20to%20annotate%20discourse%20markers%20in%20speech%20and%20writing&amp;rft.aufirst=L.&amp;rft.aulast=Crible&amp;rft.au=L.%20Crible&amp;rft.au=S.%20Zufferey&amp;rft.date=2015&amp;rft.pages=14-22&amp;rft.spage=14&amp;rft.epage=22"></span>
-  <div class="csl-entry">Fedriani, C., &amp; Sansò, A. (2017). Introduction. Pragmatic markers, discourse markers and modal particles: What do we know and where do we go from here? In C. Fedriani &amp; A. Sansò (Eds.), <i>Pragmatic Markers, Discourse Markers and Modal Particles. New Perspectives</i> (pp. 1–33). John Benjamins.</div>
-  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Introduction.%20Pragmatic%20markers%2C%20discourse%20markers%20and%20modal%20particles%3A%20What%20do%20we%20know%20and%20where%20do%20we%20go%20from%20here%3F&amp;rft.place=Amsterdam&amp;rft.publisher=John%20Benjamins&amp;rft.aufirst=Chiara&amp;rft.aulast=Fedriani&amp;rft.au=Chiara%20Fedriani&amp;rft.au=Andrea%20Sans%C3%B2&amp;rft.au=Chiara%20Fedriani&amp;rft.au=Andrea%20Sans%C3%B2&amp;rft.date=2017&amp;rft.pages=1-33&amp;rft.spage=1&amp;rft.epage=33"></span>
-  <div class="csl-entry">Jucker, A. H., &amp; Ziv, Y. (1998). Discourse markers: Introduction. In A. H. Jucker &amp; Y. Ziv (Eds.), <i>Discourse Markers</i> (pp. 1–12). John Benjamins.</div>
-  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Discourse%20markers%3A%20Introduction&amp;rft.place=Amsterdam&amp;rft.publisher=John%20Benjamins&amp;rft.aufirst=Andreas%20H.&amp;rft.aulast=Jucker&amp;rft.au=Andreas%20H.%20Jucker&amp;rft.au=Yael%20Ziv&amp;rft.au=Andreas%20H.%20Jucker&amp;rft.au=Yael%20Ziv&amp;rft.date=1998&amp;rft.pages=1-12&amp;rft.spage=1&amp;rft.epage=12"></span>
-  <div class="csl-entry">Mauri, C., Ballarè, S., Goria, E., Cerruti, M., &amp; Suriano, F. (2019). <i>KIParla corpus: A new resource for spoken Italian</i>. Proceedings of the 6th Italian Conference on Computational Linguistics CLiC-it.</div>
-  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=proceeding&amp;rft.atitle=KIParla%20corpus%3A%20a%20new%20resource%20for%20spoken%20Italian&amp;rft.aufirst=Caterina&amp;rft.aulast=Mauri&amp;rft.au=Caterina%20Mauri&amp;rft.au=Samuela%20Ballar%C3%A8&amp;rft.au=Ester%20Goria&amp;rft.au=Massimo%20Cerruti&amp;rft.au=Francesco%20Suriano&amp;rft.date=2019"></span>
-  <div class="csl-entry">Sansò, A. (2020). <i>I segnali discorsivi</i>. Carocci.</div>
-  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=I%20segnali%20discorsivi&amp;rft.place=Rome&amp;rft.publisher=Carocci&amp;rft.aufirst=Andrea&amp;rft.aulast=Sans%C3%B2&amp;rft.au=Andrea%20Sans%C3%B2&amp;rft.date=2020"></span>
-  <div class="csl-entry">Schiffrin, D. (1987). <i>Discourse Markers</i>. Cambridge University Press.</div>
-  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Discourse%20Markers&amp;rft.place=Cambridge&amp;rft.publisher=Cambridge%20University%20Press&amp;rft.aufirst=Deborah&amp;rft.aulast=Schiffrin&amp;rft.au=Deborah%20Schiffrin&amp;rft.date=1987"></span>
-</div>
-</section>
-
-
-    <section id="license">
-      <h2>License</h2>
-      <p><strong>COSÌ - Catalogo Online dei Segnali discorsivi dell’Italiano</strong> © 2025 by Laboratorio PAROLE Unisa is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International</a>.</p>
-    </section>
-
-    <section id="contacts">
-      <h2>Team Contacts</h2>
-      <table>
-        <thead>
-          <tr><th>Name</th><th>Email</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Miriam Voghera</td><td>voghera@unisa.it</td></tr>
-          <tr><td>Andrea Sansò</td><td>asanso@unisa.it</td></tr>
-          <tr><td>Iolanda Alfano</td><td>ialfano@unisa.it</td></tr>
-          <tr><td>Alfonsina Buoniconto</td><td>abuoniconto@unisa.it</td></tr>
-          <tr><td>Giovanni Di Paola</td><td>gdipaola@unisa.it</td></tr>
-          <tr><td>Pasquale Esposito</td><td>pasesposito@unisa.it</td></tr>
-          <tr><td>Flavio Pisciotta</td><td>fpisciotta@unisa.it</td></tr>
-          <tr><td>Carmela Sammarco</td><td>csammarco@unisa.it</td></tr>
-          <tr><td>Luisa Troncone</td><td>ltroncone@unisa.it</td></tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
-  <footer>
-
-    
-<p><a href="https://creativecommons.org">COSÌ - Catalogo Online dei Segnali discorsivi dell’Italiano</a> © 2025 by <a href="https://creativecommons.org">Laboratorio Parole</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;">  <img style="align-items: center;
-      float: right;
-      height: 40px;" src="/images/logo-unisa.png"/></p>
-   
+    <div style="display: flex; flex-direction: column; gap: 2px">
+      <a href="https://github.com/LaboratorioPAROLE/" style="color: #D4D4D0; text-decoration: underline; text-underline-offset: 3px">GitHub</a>
+      <a href="https://www.instagram.com/linguistics_salerno/" style="color: #D4D4D0; text-decoration: underline; text-underline-offset: 3px">Instagram</a>
+    </div>
+  </div>
 </footer>
+</div>
+</div>
+<script>
+document.querySelectorAll('.menu-toggle').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var open = b.parentElement.classList.toggle('open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+});
+</script>
 </body>
 </html>
