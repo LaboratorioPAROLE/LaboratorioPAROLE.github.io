@@ -1,4 +1,4 @@
-# Sito del Laboratorio P.A.R.O.L.E.
+# Pagina web Laboratorio P.A.R.O.L.E.
 
 ## Struttura
 
