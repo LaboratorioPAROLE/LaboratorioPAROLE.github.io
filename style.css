@@ -86,9 +86,91 @@ a:hover { color: var(--accent); }
 .submenu a { padding: 11px 18px; }
 .submenu a.active { color: var(--accent); }
 
+/* Immagine quadrata nelle schede delle risorse (facoltativa) */
+.res-logo {
+  width: 88px;
+  height: 88px;
+  flex: 0 0 88px;
+  object-fit: contain;
+  background: #FFFFFF;
+}
+.res-logo.placeholder {
+  background: #E1E1DC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Pulsante "Menu": visibile solo su schermi stretti */
+.nav-toggle { display: none; }
+
+/* Tablet e telefono: menu a scomparsa */
+@media (max-width: 900px) {
+  .site-header .inner { padding: 0 20px; column-gap: 16px; }
+  .brand { flex: 1 1 0; min-width: 0; }
+  .nav-toggle {
+    display: block;
+    flex: 0 0 auto;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    background: none;
+    border: 1px solid var(--line);
+    padding: 10px 14px;
+    cursor: pointer;
+  }
+  .site-header.nav-open .nav-toggle { border-color: var(--accent); color: var(--accent); }
+  .site-header .inner { flex-wrap: wrap; }
+  .main-nav {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    border-top: 1px solid var(--line);
+    padding: 6px 0 12px;
+  }
+  .site-header.nav-open .main-nav { display: flex; }
+  .main-nav > a, .has-menu > a { padding: 12px 0; }
+  .has-menu { flex-direction: column; align-items: stretch; }
+  .menu-toggle { display: none; }
+  .submenu {
+    display: flex;
+    position: static;
+    min-width: 0;
+    border: 0;
+    border-left: 2px solid var(--line);
+    margin: 0 0 6px 2px;
+    padding: 0;
+  }
+  .submenu a { padding: 9px 14px; font-size: 15px; }
+}
+
 /* Telefono */
 @media (max-width: 640px) {
-  .site-header .inner { padding: 0 16px; }
+  .brand img { height: 48px; }
+  .brand-name { font-size: 18px; }
   .brand-full { font-size: 12px; }
-  .submenu { min-width: 260px; }
+
+  /* margini laterali più stretti */
+  main > section, main > div, main > nav,
+  main > section[style*="background: #FFFFFF"] > div { padding-left: 20px !important; padding-right: 20px !important; }
+  main h1 { font-size: 32px !important; }
+  main article { padding: 22px 20px !important; }
+
+  /* home: logo centrato e più piccolo */
+  .hero-logo { margin: 0 auto !important; width: 160px !important; }
+
+  /* schede risorse: il logo va sopra il testo */
+  article:has(> .res-logo) { flex-direction: column; gap: 16px !important; }
+  .res-logo { width: 64px; height: 64px; flex-basis: auto; }
+}
+
+/* Home su telefono: logo tra il titolo e la presentazione */
+.hero-logo-mobile { display: none; }
+@media (max-width: 640px) {
+  .hero-logo { display: none !important; }
+  .hero-logo-mobile { display: block; width: 150px; height: auto; margin: 4px auto; }
 }

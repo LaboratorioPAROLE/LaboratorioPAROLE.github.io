@@ -16,7 +16,8 @@
       <img src="images/logo.png" alt="" width="39" height="56">
       <span><span class="brand-name">Laboratorio P.A.R.O.L.E.</span><span class="brand-full">Laboratorio Per l'Analisi, la Ricerca e l'Osservazione delle Lingue Europee</span></span>
     </a>
-    <nav class="main-nav" aria-label="Principale">
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav class="main-nav" id="main-nav" aria-label="Principale">
       <a href="persone.html">Persone</a>
       <a href="progetti.html">Progetti</a>
       <div class="has-menu active">
@@ -87,6 +88,11 @@
 </div>
 </div>
 <script>
+var nt = document.querySelector('.nav-toggle');
+nt.addEventListener('click', function () {
+  var open = document.querySelector('.site-header').classList.toggle('nav-open');
+  nt.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
 document.querySelectorAll('.menu-toggle').forEach(function (b) {
   b.addEventListener('click', function () {
     var open = b.parentElement.classList.toggle('open');
