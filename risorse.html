@@ -93,6 +93,51 @@ nt.addEventListener('click', function () {
   var open = document.querySelector('.site-header').classList.toggle('nav-open');
   nt.setAttribute('aria-expanded', open ? 'true' : 'false');
 });
+var wrap = document.querySelector('.search-wrap');
+if (wrap) {
+  var norm = function (t) { return t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); };
+  var cards = Array.prototype.slice.call(document.querySelectorAll('main article'));
+  var q = wrap.querySelector('.res-search');
+  var selects = Array.prototype.slice.call(wrap.querySelectorAll('select[data-filter]'));
+  var count = wrap.querySelector('.search-count');
+  var empty = wrap.querySelector('.search-empty');
+  var tags = function (card, f) {
+    return (card.getAttribute('data-' + f) || '').split(';').map(function (v) { return v.trim(); }).filter(Boolean);
+  };
+  // riempie ogni tendina con i valori presenti nelle schede
+  selects.forEach(function (s) {
+    var seen = {};
+    cards.forEach(function (c) { tags(c, s.dataset.filter).forEach(function (v) { seen[v] = true; }); });
+    var values = Object.keys(seen).sort(function (a, b) { return a.localeCompare(b, 'it'); });
+    if (!values.length) { s.parentElement.hidden = true; return; }
+    values.forEach(function (v) {
+      var o = document.createElement('option');
+      o.value = v; o.textContent = v;
+      s.appendChild(o);
+    });
+  });
+  var apply = function () {
+    var words = norm(q.value).split(/\s+/).filter(Boolean);
+    var shown = 0;
+    cards.forEach(function (c) {
+      var text = norm(c.textContent + ' ' + (c.dataset.keywords || ''));
+      var ok = words.every(function (w) { return text.indexOf(w) !== -1; }) &&
+        selects.every(function (s) { return !s.value || tags(c, s.dataset.filter).indexOf(s.value) !== -1; });
+      c.hidden = !ok;
+      if (ok) shown++;
+    });
+    var filtered = words.length || selects.some(function (s) { return s.value; });
+    count.textContent = filtered && shown ? shown + (shown === 1 ? ' risultato' : ' risultati') + ' su ' + cards.length : '';
+    empty.hidden = shown > 0;
+  };
+  q.addEventListener('input', apply);
+  selects.forEach(function (s) { s.addEventListener('change', apply); });
+  wrap.querySelector('.filters-reset').addEventListener('click', function () {
+    q.value = '';
+    selects.forEach(function (s) { s.value = ''; });
+    apply();
+  });
+}
 document.querySelectorAll('.menu-toggle').forEach(function (b) {
   b.addEventListener('click', function () {
     var open = b.parentElement.classList.toggle('open');

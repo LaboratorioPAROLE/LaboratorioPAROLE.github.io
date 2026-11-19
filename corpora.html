@@ -58,8 +58,32 @@
     </div>
   </nav>
 
+  <div class="search-wrap">
+    <div class="filters">
+      <div class="filter filter-text">
+        <label for="cerca">Cerca</label>
+        <input type="search" id="cerca" class="res-search" placeholder="Cerca per nome o parola chiave" autocomplete="off">
+      </div>
+      <div class="filter">
+        <label for="f-lingua">Lingua</label>
+        <select id="f-lingua" data-filter="lingua"><option value="">Tutte le lingue</option></select>
+      </div>
+      <div class="filter">
+        <label for="f-modalita">Modalità</label>
+        <select id="f-modalita" data-filter="modalita"><option value="">Tutte le modalità</option></select>
+      </div>
+      <div class="filter">
+        <label for="f-tipo">Tipo</label>
+        <select id="f-tipo" data-filter="tipo"><option value="">Tutti i tipi</option></select>
+      </div>
+      <button type="button" class="filters-reset">Azzera</button>
+    </div>
+    <p class="search-count" aria-live="polite"></p>
+    <p class="search-empty" hidden>Nessuna risorsa corrisponde ai filtri scelti.</p>
+  </div>
+
   <div style="max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 32px 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 24px">
-    <article style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
+    <article data-lingua="italiano" data-modalita="scritto" data-tipo="sincronico" style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
       <!-- Logo della risorsa: sostituisci con <img class="res-logo" src="images/nome-file.png" alt="Nome della risorsa"> oppure elimina questa riga -->
       <span class="res-logo placeholder" aria-hidden="true">Logo</span>
       <div style="flex: 1 1 auto; min-width: 0; align-self: stretch; display: flex; flex-direction: column; gap: 10px">
@@ -69,7 +93,7 @@
         <span style="font-size: 16px; margin-top: auto; padding-top: 8px"><a href="corpora.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Consulta</a> · <a href="corpora.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Documentazione</a></span>
       </div>
     </article>
-    <article style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
+    <article data-lingua="italiano" data-modalita="parlato" data-tipo="sincronico" style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
       <!-- Logo della risorsa: sostituisci con <img class="res-logo" src="images/nome-file.png" alt="Nome della risorsa"> oppure elimina questa riga -->
       <span class="res-logo placeholder" aria-hidden="true">Logo</span>
       <div style="flex: 1 1 auto; min-width: 0; align-self: stretch; display: flex; flex-direction: column; gap: 10px">
@@ -79,7 +103,7 @@
         <span style="font-size: 16px; margin-top: auto; padding-top: 8px"><a href="corpora.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Consulta</a> · <a href="corpora.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Documentazione</a></span>
       </div>
     </article>
-    <article style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
+    <article data-lingua="italiano; latino" data-modalita="scritto" data-tipo="diacronico" style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
       <div style="flex: 1 1 auto; min-width: 0; align-self: stretch; display: flex; flex-direction: column; gap: 10px">
         <h2 style="margin: 0; font-size: 22px; font-weight: 600">[Nome della banca dati]</h2>
         <span style="font-size: 15px; color: #595959">Banca dati · [Lingue] · [Numero di voci] · [Licenza]</span>
@@ -87,7 +111,7 @@
         <span style="font-size: 16px; margin-top: auto; padding-top: 8px"><a href="corpora.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Consulta</a> · <a href="corpora.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Documentazione</a></span>
       </div>
     </article>
-    <article style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
+    <article data-lingua="inglese; francese" data-modalita="scritto" data-tipo="parallelo" style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
       <div style="flex: 1 1 auto; min-width: 0; align-self: stretch; display: flex; flex-direction: column; gap: 10px">
         <h2 style="margin: 0; font-size: 22px; font-weight: 600">[Nome della banca dati]</h2>
         <span style="font-size: 15px; color: #595959">Banca dati · [Lingue] · [Numero di voci] · [Licenza]</span>
@@ -125,6 +149,51 @@ nt.addEventListener('click', function () {
   var open = document.querySelector('.site-header').classList.toggle('nav-open');
   nt.setAttribute('aria-expanded', open ? 'true' : 'false');
 });
+var wrap = document.querySelector('.search-wrap');
+if (wrap) {
+  var norm = function (t) { return t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); };
+  var cards = Array.prototype.slice.call(document.querySelectorAll('main article'));
+  var q = wrap.querySelector('.res-search');
+  var selects = Array.prototype.slice.call(wrap.querySelectorAll('select[data-filter]'));
+  var count = wrap.querySelector('.search-count');
+  var empty = wrap.querySelector('.search-empty');
+  var tags = function (card, f) {
+    return (card.getAttribute('data-' + f) || '').split(';').map(function (v) { return v.trim(); }).filter(Boolean);
+  };
+  // riempie ogni tendina con i valori presenti nelle schede
+  selects.forEach(function (s) {
+    var seen = {};
+    cards.forEach(function (c) { tags(c, s.dataset.filter).forEach(function (v) { seen[v] = true; }); });
+    var values = Object.keys(seen).sort(function (a, b) { return a.localeCompare(b, 'it'); });
+    if (!values.length) { s.parentElement.hidden = true; return; }
+    values.forEach(function (v) {
+      var o = document.createElement('option');
+      o.value = v; o.textContent = v;
+      s.appendChild(o);
+    });
+  });
+  var apply = function () {
+    var words = norm(q.value).split(/\s+/).filter(Boolean);
+    var shown = 0;
+    cards.forEach(function (c) {
+      var text = norm(c.textContent + ' ' + (c.dataset.keywords || ''));
+      var ok = words.every(function (w) { return text.indexOf(w) !== -1; }) &&
+        selects.every(function (s) { return !s.value || tags(c, s.dataset.filter).indexOf(s.value) !== -1; });
+      c.hidden = !ok;
+      if (ok) shown++;
+    });
+    var filtered = words.length || selects.some(function (s) { return s.value; });
+    count.textContent = filtered && shown ? shown + (shown === 1 ? ' risultato' : ' risultati') + ' su ' + cards.length : '';
+    empty.hidden = shown > 0;
+  };
+  q.addEventListener('input', apply);
+  selects.forEach(function (s) { s.addEventListener('change', apply); });
+  wrap.querySelector('.filters-reset').addEventListener('click', function () {
+    q.value = '';
+    selects.forEach(function (s) { s.value = ''; });
+    apply();
+  });
+}
 document.querySelectorAll('.menu-toggle').forEach(function (b) {
   b.addEventListener('click', function () {
     var open = b.parentElement.classList.toggle('open');
