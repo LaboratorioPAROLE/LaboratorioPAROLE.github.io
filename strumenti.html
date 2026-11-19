@@ -58,8 +58,28 @@
     </div>
   </nav>
 
+  <div class="search-wrap">
+    <div class="filters">
+      <div class="filter filter-text">
+        <label for="cerca">Cerca</label>
+        <input type="search" id="cerca" class="res-search" placeholder="Cerca per nome o parola chiave" autocomplete="off">
+      </div>
+      <div class="filter">
+        <label for="f-tipo">Tipo</label>
+        <select id="f-tipo" data-filter="tipo"><option value="">Tutti i tipi</option></select>
+      </div>
+      <div class="filter">
+        <label for="f-livello">Livello di analisi</label>
+        <select id="f-livello" data-filter="livello"><option value="">Tutti i livelli</option></select>
+      </div>
+      <button type="button" class="filters-reset">Azzera</button>
+    </div>
+    <p class="search-count" aria-live="polite"></p>
+    <p class="search-empty" hidden>Nessuna risorsa corrisponde ai filtri scelti.</p>
+  </div>
+
   <div style="max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 32px 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 24px">
-    <article style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
+    <article data-tipo="software" data-livello="morfosintassi" style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
       <!-- Logo della risorsa: sostituisci con <img class="res-logo" src="images/nome-file.png" alt="Nome della risorsa"> oppure elimina questa riga -->
       <span class="res-logo placeholder" aria-hidden="true">Logo</span>
       <div style="flex: 1 1 auto; min-width: 0; align-self: stretch; display: flex; flex-direction: column; gap: 10px">
@@ -69,7 +89,7 @@
         <span style="font-size: 16px; margin-top: auto; padding-top: 8px"><a href="strumenti.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Usa online</a> · <a href="strumenti.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Codice sorgente</a></span>
       </div>
     </article>
-    <article style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
+    <article data-tipo="software" data-livello="sintassi; semantica" style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
       <!-- Logo della risorsa: sostituisci con <img class="res-logo" src="images/nome-file.png" alt="Nome della risorsa"> oppure elimina questa riga -->
       <span class="res-logo placeholder" aria-hidden="true">Logo</span>
       <div style="flex: 1 1 auto; min-width: 0; align-self: stretch; display: flex; flex-direction: column; gap: 10px">
@@ -79,7 +99,7 @@
         <span style="font-size: 16px; margin-top: auto; padding-top: 8px"><a href="strumenti.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Scarica</a> · <a href="strumenti.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Documentazione</a></span>
       </div>
     </article>
-    <article style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
+    <article data-tipo="schema di annotazione" data-livello="pragmatica" style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
       <div style="flex: 1 1 auto; min-width: 0; align-self: stretch; display: flex; flex-direction: column; gap: 10px">
         <h2 style="margin: 0; font-size: 22px; font-weight: 600">[Nome dello schema]</h2>
         <span style="font-size: 15px; color: #595959">Schema di annotazione · [Livelli] · versione [x.y]</span>
@@ -87,7 +107,7 @@
         <span style="font-size: 16px; margin-top: auto; padding-top: 8px"><a href="strumenti.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Linee guida</a> · <a href="strumenti.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Esempi</a></span>
       </div>
     </article>
-    <article style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
+    <article data-tipo="script" data-livello="lessico; morfologia" style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
       <div style="flex: 1 1 auto; min-width: 0; align-self: stretch; display: flex; flex-direction: column; gap: 10px">
         <h2 style="margin: 0; font-size: 22px; font-weight: 600">[Nome dello script o pacchetto]</h2>
         <span style="font-size: 15px; color: #595959">Script · [Linguaggio] · versione [x.y] · [Licenza]</span>
@@ -99,6 +119,12 @@
 </main>
 <div style="margin-top: auto">
 <footer class="site-footer" style="font-family: 'Avenir Next', 'Avenir', 'Nunito Sans', system-ui, sans-serif; background: #2B2B2B; color: #D4D4D0">
+  <div class="footer-logos" style="background: #FFFFFF; border-top: 1px solid #D9D9D5">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 14px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px">
+      <a href="https://www.unisa.it/" style="display: block"><img src="images/logo_unisa.png" alt="Università degli Studi di Salerno" style="height: 44px; width: auto; display: block"></a>
+      <a href="https://www.dipsum.unisa.it/" style="display: block"><img src="images/logo_dipsum.png" alt="Dipartimento di Studi Umanistici" style="height: 34px; width: auto; display: block"></a>
+    </div>
+  </div>
   <div style="max-width: 1200px; margin: 0 auto; padding: 48px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 32px; font-size: 15px; line-height: 1.6">
     <div>
       <div style="font-size: 18px; font-weight: 600; color: #FFFFFF; margin-bottom: 8px">Laboratorio P.A.R.O.L.E.</div>
@@ -125,6 +151,51 @@ nt.addEventListener('click', function () {
   var open = document.querySelector('.site-header').classList.toggle('nav-open');
   nt.setAttribute('aria-expanded', open ? 'true' : 'false');
 });
+var wrap = document.querySelector('.search-wrap');
+if (wrap) {
+  var norm = function (t) { return t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); };
+  var cards = Array.prototype.slice.call(document.querySelectorAll('main article'));
+  var q = wrap.querySelector('.res-search');
+  var selects = Array.prototype.slice.call(wrap.querySelectorAll('select[data-filter]'));
+  var count = wrap.querySelector('.search-count');
+  var empty = wrap.querySelector('.search-empty');
+  var tags = function (card, f) {
+    return (card.getAttribute('data-' + f) || '').split(';').map(function (v) { return v.trim(); }).filter(Boolean);
+  };
+  // riempie ogni tendina con i valori presenti nelle schede
+  selects.forEach(function (s) {
+    var seen = {};
+    cards.forEach(function (c) { tags(c, s.dataset.filter).forEach(function (v) { seen[v] = true; }); });
+    var values = Object.keys(seen).sort(function (a, b) { return a.localeCompare(b, 'it'); });
+    if (!values.length) { s.parentElement.hidden = true; return; }
+    values.forEach(function (v) {
+      var o = document.createElement('option');
+      o.value = v; o.textContent = v;
+      s.appendChild(o);
+    });
+  });
+  var apply = function () {
+    var words = norm(q.value).split(/\s+/).filter(Boolean);
+    var shown = 0;
+    cards.forEach(function (c) {
+      var text = norm(c.textContent + ' ' + (c.dataset.keywords || ''));
+      var ok = words.every(function (w) { return text.indexOf(w) !== -1; }) &&
+        selects.every(function (s) { return !s.value || tags(c, s.dataset.filter).indexOf(s.value) !== -1; });
+      c.hidden = !ok;
+      if (ok) shown++;
+    });
+    var filtered = words.length || selects.some(function (s) { return s.value; });
+    count.textContent = filtered && shown ? shown + (shown === 1 ? ' risultato' : ' risultati') + ' su ' + cards.length : '';
+    empty.hidden = shown > 0;
+  };
+  q.addEventListener('input', apply);
+  selects.forEach(function (s) { s.addEventListener('change', apply); });
+  wrap.querySelector('.filters-reset').addEventListener('click', function () {
+    q.value = '';
+    selects.forEach(function (s) { s.value = ''; });
+    apply();
+  });
+}
 document.querySelectorAll('.menu-toggle').forEach(function (b) {
   b.addEventListener('click', function () {
     var open = b.parentElement.classList.toggle('open');
