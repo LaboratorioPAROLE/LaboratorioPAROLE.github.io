@@ -47,7 +47,7 @@
   <section style="max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 40px 32px 24px; display: flex; flex-direction: column; gap: 14px">
     <span style="font-size: 14px; color: #595959"><a href="index.html" style="color: #595959; text-decoration: underline; text-underline-offset: 2px">Home</a> / <a href="risorse.html" style="color: #595959; text-decoration: underline; text-underline-offset: 2px">Risorse</a> / Strumenti di analisi e annotazione</span>
     <h1 style="margin: 0; font-size: 40px; font-weight: 600">Strumenti di analisi e annotazione</h1>
-    <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #333333; max-width: 720px">[Breve introduzione: software, script e schemi di annotazione sviluppati o usati dal laboratorio.]</p>
+    <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #333333; max-width: 720px">Software, applicazioni e schemi di annotazione sviluppati dal laboratorio per l’analisi e l’annotazione di testi scritti e parlati.</p>
   </section>
 
   <nav aria-label="Risorse" style="max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 32px 32px">
@@ -79,40 +79,21 @@
   </div>
 
   <div style="max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 32px 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 24px">
-    <article data-tipo="software" data-livello="morfosintassi" style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
-      <!-- Logo della risorsa: sostituisci con <img class="res-logo" src="images/nome-file.png" alt="Nome della risorsa"> oppure elimina questa riga -->
-      <span class="res-logo placeholder" aria-hidden="true">Logo</span>
+    <article data-tipo="software" data-livello="pragmatica" data-keywords="CoLÀ COLA Console per l'Annotazione segnali discorsivi marcatori discorsivi KWIC concordanze KIParla COSÌ inter-annotator agreement IAA Shiny R" style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
+      <img class="res-logo" src="images/logo_cola.png" alt="Logo di CoLÀ">
       <div style="flex: 1 1 auto; min-width: 0; align-self: stretch; display: flex; flex-direction: column; gap: 10px">
-        <h2 style="margin: 0; font-size: 22px; font-weight: 600">[Nome dello strumento]</h2>
-        <span style="font-size: 15px; color: #595959">Analisi · [Linguaggio] · versione [x.y] · [Licenza]</span>
-        <p style="margin: 4px 0 0; font-size: 17px; line-height: 1.6; color: #333333">[A cosa serve, che tipo di dati elabora, cosa restituisce.]</p>
-        <span style="font-size: 16px; margin-top: auto; padding-top: 8px"><a href="strumenti.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Usa online</a> · <a href="strumenti.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Codice sorgente</a></span>
+        <h2 style="margin: 0; font-size: 22px; font-weight: 600">CoLÀ: Console per l’Annotazione dei segnali discorsivi</h2>
+        <span style="font-size: 15px; color: #595959">Annotazione · R (Shiny) · versione web e versione per Windows</span>
+        <p style="margin: 4px 0 0; font-size: 17px; line-height: 1.6; color: #333333">Applicazione per l’annotazione manuale dei segnali discorsivi su concordanze KWIC, compatibile con le occorrenze esportate dal corpus KIParla. Per ogni occorrenza si stabilisce se si tratta di un segnale discorsivo e quali funzioni svolge, tra le 23 funzioni interazionali, metatestuali e cognitive dello schema del progetto COSÌ; si possono segnalare i cumuli e aggiungere commenti. Include un modulo per confrontare due annotazioni dello stesso file e calcolare l’accordo tra annotatori (IAA). Legge e salva file Excel e CSV.</p>
+        <span style="font-size: 16px; margin-top: auto; padding-top: 8px"><a href="https://laboratorioparole.github.io/cola/" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Usa online</a> · <a href="https://github.com/LaboratorioPAROLE/cola/releases" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Scarica</a> · <a href="https://github.com/LaboratorioPAROLE/cola" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Codice sorgente e guida</a></span>
       </div>
     </article>
-    <article data-tipo="software" data-livello="sintassi; semantica" style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
-      <!-- Logo della risorsa: sostituisci con <img class="res-logo" src="images/nome-file.png" alt="Nome della risorsa"> oppure elimina questa riga -->
-      <span class="res-logo placeholder" aria-hidden="true">Logo</span>
+    <article data-tipo="software; schema di annotazione" data-livello="sintassi" data-keywords="AN.ANA.S. ANANAS Annotazione e Analisi Sintattica treebank costituenti XML parlato scritto multilingue parlaritaliano" style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
       <div style="flex: 1 1 auto; min-width: 0; align-self: stretch; display: flex; flex-direction: column; gap: 10px">
-        <h2 style="margin: 0; font-size: 22px; font-weight: 600">[Nome dello strumento]</h2>
-        <span style="font-size: 15px; color: #595959">Annotazione · [Formati supportati] · versione [x.y] · [Licenza]</span>
-        <p style="margin: 4px 0 0; font-size: 17px; line-height: 1.6; color: #333333">[A cosa serve, che tipo di dati elabora, cosa restituisce.]</p>
-        <span style="font-size: 16px; margin-top: auto; padding-top: 8px"><a href="strumenti.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Scarica</a> · <a href="strumenti.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Documentazione</a></span>
-      </div>
-    </article>
-    <article data-tipo="schema di annotazione" data-livello="pragmatica" style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
-      <div style="flex: 1 1 auto; min-width: 0; align-self: stretch; display: flex; flex-direction: column; gap: 10px">
-        <h2 style="margin: 0; font-size: 22px; font-weight: 600">[Nome dello schema]</h2>
-        <span style="font-size: 15px; color: #595959">Schema di annotazione · [Livelli] · versione [x.y]</span>
-        <p style="margin: 4px 0 0; font-size: 17px; line-height: 1.6; color: #333333">[Livelli di annotazione previsti e linee guida per gli annotatori.]</p>
-        <span style="font-size: 16px; margin-top: auto; padding-top: 8px"><a href="strumenti.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Linee guida</a> · <a href="strumenti.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Esempi</a></span>
-      </div>
-    </article>
-    <article data-tipo="script" data-livello="lessico; morfologia" style="background: #FFFFFF; border: 1px solid #D9D9D5; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start">
-      <div style="flex: 1 1 auto; min-width: 0; align-self: stretch; display: flex; flex-direction: column; gap: 10px">
-        <h2 style="margin: 0; font-size: 22px; font-weight: 600">[Nome dello script o pacchetto]</h2>
-        <span style="font-size: 15px; color: #595959">Script · [Linguaggio] · versione [x.y] · [Licenza]</span>
-        <p style="margin: 4px 0 0; font-size: 17px; line-height: 1.6; color: #333333">[A cosa serve, che tipo di dati elabora, cosa restituisce.]</p>
-        <span style="font-size: 16px; margin-top: auto; padding-top: 8px"><a href="strumenti.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Scarica</a> · <a href="strumenti.html" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Codice sorgente</a></span>
+        <h2 style="margin: 0; font-size: 22px; font-weight: 600">AN.ANA.S.: Annotazione e Analisi Sintattica</h2>
+        <span style="font-size: 15px; color: #595959">Annotazione · XML · Scaricabile gratuitamente</span>
+        <p style="margin: 4px 0 0; font-size: 17px; line-height: 1.6; color: #333333">Sistema per l’annotazione sintattica di testi parlati e scritti, sviluppato per la costruzione di treebank. È basato sui costituenti: organizza le unità sintattiche in una struttura gerarchica secondo lo standard XML, in cui le relazioni tra costituenti sono codificate dall’annidamento degli elementi. È stato usato, tra l’altro, per la treebank multilingue AN.ANA.S._MT di dialoghi e parlato spontaneo in italiano, inglese e spagnolo. A cura di Miriam Voghera e Francesco Cutugno.</p>
+        <span style="font-size: 16px; margin-top: auto; padding-top: 8px"><a href="https://www.ledonline.it/ledonline/JADT-2010/allegati/JADT-2010-1187-1194_066-Landolfi.pdf" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px">Documentazione</a></span>
       </div>
     </article>
   </div>
