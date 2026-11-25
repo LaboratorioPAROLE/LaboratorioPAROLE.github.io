@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://laboratorioparole.github.io/sitemap-0.xml
